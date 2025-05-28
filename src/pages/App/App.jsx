@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import "./App.css";
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
     async function fetchPokemonList() {
       try {
         const response = await fetch(
-          "https://pokeapi.co/api/v2/pokemon?limit=10"
+          "https://pokeapi.co/api/v2/pokemon?limit=20"
         );
         // fetch always returns something so response.ok means it returned
         //  status code 200 - 299
@@ -70,14 +69,18 @@ function App() {
         {selectedPokemon && (
           <div>
             <h2>{capital(selectedPokemon.name)}</h2>
-            <img
-              src={selectedPokemon.sprites.front_default}
-              alt={selectedPokemon.name}
-            />
-            <img
-              src={selectedPokemon.sprites.front_shiny}
-              alt={selectedPokemon.name}
-            />
+            <div className="images">
+              <img
+                src={selectedPokemon.sprites.front_default}
+                alt={selectedPokemon.name}
+                style={{height: "10em"}}
+              />
+              <img
+                src={selectedPokemon.sprites.front_shiny}
+                alt={selectedPokemon.name}
+                style={{height: "10em"}}
+              />
+            </div>
           </div>
         )}
       </div>

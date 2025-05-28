@@ -1,7 +1,3 @@
-body {
-  display: grid;
-}
-
 .all {
   display: flex;
   flex-direction: column;
@@ -9,10 +5,22 @@ body {
   align-items: center;
 }
 
-h1, h2 {
+h1 {
   text-align: center;
+  font-size: 3.2em;
 }
+
+h2 {
+  text-align: center;
+  font-size: 3.2em;
+}
+
 
 select {
   text-align: center;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
 }
