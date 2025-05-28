@@ -55,30 +55,32 @@ function App() {
   return (
     <>
       <h1>Select a pokemon!</h1>
-      <select onChange={handleSelect} defaultValue="">
-        <option value="" disabled>
-          Choose a pokemon
-        </option>
-        {pokemonList.map((poke) => (
-          <option key={poke.name} value={poke.url}>
-            {capital(poke.name)}
+      <div className="all">
+        <select onChange={handleSelect} defaultValue="">
+          <option value="" disabled>
+            Choose a pokemon
           </option>
-        ))}
-      </select>
+          {pokemonList.map((poke) => (
+            <option key={poke.name} value={poke.url}>
+              {capital(poke.name)}
+            </option>
+          ))}
+        </select>
 
-      {selectedPokemon && (
-        <div>
-          <h2>{capital(selectedPokemon.name)}</h2>
-          <img
-            src={selectedPokemon.sprites.front_default}
-            alt={selectedPokemon.name}
-          />
-          <img
-            src={selectedPokemon.sprites.front_shiny}
-            alt={selectedPokemon.name}
-          />
-        </div>
-      )}
+        {selectedPokemon && (
+          <div>
+            <h2>{capital(selectedPokemon.name)}</h2>
+            <img
+              src={selectedPokemon.sprites.front_default}
+              alt={selectedPokemon.name}
+            />
+            <img
+              src={selectedPokemon.sprites.front_shiny}
+              alt={selectedPokemon.name}
+            />
+          </div>
+        )}
+      </div>
     </>
   );
 }
